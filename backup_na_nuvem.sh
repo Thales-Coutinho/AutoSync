@@ -16,7 +16,7 @@
 #  da data de criação em seu titulo.
 #
 #  Exemplos:
-#      $ ./backup.sh
+#      $ ./backup_na_nuvem.sh
 #      Com este comando o backup é executado
 # ------------------------------------------------------------------------ #
 # Changelog/ Registro de Alteração:
@@ -65,7 +65,7 @@ if ! test -f ~/.config/rclone/rclone.conf; then
 fi
 
 # Existe o diretorio onde o backup será armazenado?
-if ! test -f $DIRETORIO_DESTINO; then
+if ! test -d $DIRETORIO_DESTINO; then
     mkdir $DIRETORIO_DESTINO
     echo "diretorio $DIRETORIO_DESTINO criado"
 fi

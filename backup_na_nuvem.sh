@@ -35,14 +35,14 @@
 
 # Informe os diretorios que deseja fazer backup
 DIRETORIOS_INCLUSOS=(
-'/home/Thales/Documents'
-'/home/Thales/Templates'
-'/home/Thales/Sh'
+'caminho/absoluto/aqui'
+'caminho/absoluto/aqui'
+'caminho/absoluto/aqui'
 )
 
 # Informe do ponto de montagem 
 #(IMPORTANTE:certifiquise que o mesmo não esta incluso nos diretorios de Backup)
-DIRETORIO_BACKUP='/home/Thales/Downloads/backup'
+DIRETORIO_BACKUP='caminho/absoluto/aqui'
 
 # Informe o nome do remote do Rclone que sera utilizado
 RCLONE_REMOTE='backup:'
@@ -55,7 +55,7 @@ ARQUIVO_LOG='/var/log/backup-nuvem.log'
 
 # Formato de Hora que sera utilizado no nome do backup. (NÃO ALTERAR)
 DATA=$(date "+%Y-%m-%d")
-NOME_ARQUIVO='bkp-$DATA.tar.gz'
+NOME_ARQUIVO=bkp-$DATA.tar.gz
 
 
 # ------------------------------- TESTES -------------------------------------------- #

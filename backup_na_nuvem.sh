@@ -40,19 +40,19 @@
 
 # Informe os diretórios que deseja fazer backup
 DIRETORIOS_INCLUSOS=(
-#'/var/home/thales/Documents'
-'/var/home/thales/.config/joplin-desktop/database.sqlite'
-'/var/home/thales/.config/joplin-desktop/resources'
+'/Caminho/absoluto/aqui'
+'/Caminho/absoluto/aqui'
+'/Caminho/absoluto/aqui'
 )
 
 # Informe o nome do remote do Rclone que será utilizado
-RCLONE_REMOTE='backup:Backup/'
+RCLONE_REMOTE='Nome_Remote:Caminho/absoluto/aqui'
+
+# Onde os logs serão armazenados
+ARQUIVO_LOG='/Caminho/absoluto/aqui'
 
 # Informe o número de backups que deseja armazenar
 NUMERO_BACKUPS='7'
-
-# Onde os logs serão armazenados
-ARQUIVO_LOG=~/teste
 
 # Formato de Hora que será utilizado no nome do backup.
 DATA=$(date "+%d-%m-%Y")

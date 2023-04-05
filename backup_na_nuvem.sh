@@ -38,26 +38,7 @@
 #
 # ------------------------------- VARIÁVEIS ------------------------------------------ #
 
-# Informe os diretórios que deseja fazer backup
-DIRETORIOS_INCLUSOS=(
-'/Caminho/absoluto/aqui'
-'/Caminho/absoluto/aqui'
-'/Caminho/absoluto/aqui'
-)
-
-# Informe o nome do remote do Rclone que será utilizado
-RCLONE_REMOTE='Nome_Remote:Caminho/absoluto/aqui'
-
-# Onde os logs serão armazenados
-ARQUIVO_LOG='/Caminho/absoluto/aqui'
-
-# Informe o número de backups que deseja armazenar
-NUMERO_BACKUPS='7'
-
-# Formato de Hora que será utilizado no nome do backup.
-DATA=$(date "+%d-%m-%Y")
-NOME_ARQUIVO=bkpTeste-$DATA.tar.gz
-
+source config
 
 # ------------------------------- TESTES -------------------------------------------- #
 

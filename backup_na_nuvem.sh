@@ -79,7 +79,7 @@ if [[ $TOTAL_ARQUIVOS -ge  $NUMERO_BACKUPS ]]; then
   	rclone deletefile "$RCLONE_REMOTE""$REMOVER"
   	echo "[$(date +'%d-%m-%Y %T')] SUCESSO: arquivo obsoleto $RCLONE_REMOTE$REMOVER removido"| tee -a $ARQUIVO_LOG
    done
-   echo "[$(date +'%d-%m-%Y %T')] SUCESSO: arquivo obsoletos removidos"| tee -a $ARQUIVO_LOG
+   echo "[$(date +'%d-%m-%Y %T')] SUCESSO: arquivos obsoletos removidos"| tee -a $ARQUIVO_LOG
 fi
 
 echo " **Backup finalizado com sucesso!**"

@@ -1,7 +1,7 @@
-# backup-na-nuvem
-programa para a criação e compreção automatizada de backups no serviço de nuvem de preferencia.
+# Cloud-Backup
+Program for creation and automatized comprehenzion of backups in clouding providors of your preference
 
-# primeiros passos:
-antes de começar a utilizar o programa é necessario que o usuario:
-- 1) instale e configure o Rclone
-- 2) informe no campo de variaveis os diretorios que serão salvos, em que diretorio o backup será armazenado e seu "remote" do Rclone, estes campos devem ser preenchidos no arquivo "config".
+# First step:
+Before you start using the program is necessary that the user:
+- 1) Install and configure the Rclone
+- 2) Inform in the fields variables the directories that will be saved, in which the backup will be stored and the remote of Rclone, this field must be field in  in the arquive "config".

@@ -57,28 +57,28 @@ fi
 # ------------------------------- functions ------------------------------------------ #
 
 # function to print and record error messages in the log and close the program
-die() { echo "$*" | tee -a $ARQUIVO_LOG ; exit 1; }
+die() { echo "$*" | tee -a $LOG_PATH ; exit 1; }
 
 # ------------------------------- EXECUTION ----------------------------------------- #
 
 # Creating the Backup file and sending it to the remote directory
-tar -cpPzf - "${DIRETORIOS_INCLUSOS[@]}" | rclone rcat "$RCLONE_REMOTE""$NOME_ARQUIVO" || \
+tar -cpPzf - "${INCLUDED_DIRECTORIES[@]}" | rclone rcat "$RCLONE_REMOTE""$NAME_FILE" || \
 die "[$(date +'%d-%m-%Y %T')] ERROR: failed to generate file"
 
-echo "[$(date +'%d-%m-%Y %T')] SUCCESS: backup file "$NOME_ARQUIVO" sent"| tee -a $ARQUIVO_LOG
+echo "[$(date +'%d-%m-%Y %T')] SUCCESS: backup file "$NAME_FILE" sent"| tee -a $LOG_PATH
 
 # current number of files in the cloud
-TOTAL_ARQUIVOS=$(rclone lsf "$RCLONE_REMOTE" | wc -l)
+TOTAL_FILES=$(rclone lsf "$RCLONE_REMOTE" | wc -l)
 
 # removing obsolete files
-if [[ $TOTAL_ARQUIVOS -ge  $NUMERO_BACKUPS ]]; then
-   ARQUIVOS_REMOVER=$(( $TOTAL_ARQUIVOS - $NUMERO_BACKUPS ))
-   for (( n=0;n<$ARQUIVOS_REMOVER;n++ )); do
-  	REMOVER=$(rclone lsjson "$RCLONE_REMOTE" --files-only | jq -r '.[] | "\(.ModTime) \(.Name)"' | sort | head -n 1 | cut -d' ' -f2-)
-  	rclone deletefile "$RCLONE_REMOTE""$REMOVER"
-  	echo "[$(date +'%d-%m-%Y %T')] SUCCESS: obsolete file $RCLONE_REMOTE$REMOVER removed"| tee -a $ARQUIVO_LOG
+if [[ $TOTAL_FILES -ge  $NUMBER_BACKUPS ]]; then
+   FILES_TO_REMOVE=$(( $TOTAL_FILES - $NUMBER_BACKUPS ))
+   for (( n=0;n<$FILES_TO_REMOVE;n++ )); do
+  	TO_REMOVE=$(rclone lsjson "$RCLONE_REMOTE" --files-only | jq -r '.[] | "\(.ModTime) \(.Name)"' | sort | head -n 1 | cut -d' ' -f2-)
+  	rclone deletefile "$RCLONE_REMOTE""$TO_REMOVE"
+  	echo "[$(date +'%d-%m-%Y %T')] SUCCESS: obsolete file $RCLONE_REMOTE$TO_REMOVE removed"| tee -a $LOG_PATH
    done
-   echo "[$(date +'%d-%m-%Y %T')] SUCCESS: obsolete files removed"| tee -a $ARQUIVO_LOG
+   echo "[$(date +'%d-%m-%Y %T')] SUCCESS: obsolete files removed"| tee -a $LOG_PATH
 fi
 
 echo " **Backup completed successfully!**"

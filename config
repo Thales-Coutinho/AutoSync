@@ -1,5 +1,5 @@
 # Informe os diretórios que deseja fazer backup
-export DIRETORIOS_INCLUSOS=(
+export INCLUDED_DIRECTORIES=(
 '/home/thales/Documents'
 '/home/thales/.config/joplin-desktop/database.sqlite'
 '/home/thales/.config/joplin-desktop/resources'
@@ -9,11 +9,11 @@ export DIRETORIOS_INCLUSOS=(
 export RCLONE_REMOTE='backup:Backup/'
 
 # Informe o número de backups que deseja armazenar
-export NUMERO_BACKUPS='7'
+export NUMBER_BACKUPS='7'
 
 # Onde os logs serão armazenados
-export ARQUIVO_LOG='/home/thales/teste'
+export LOG_PATH='/home/thales/teste'
 
 # Formato de Hora que será utilizado no nome do backup.
-DATA=$(date "+%d-%m-%Y")
-export NOME_ARQUIVO=bkp-$DATA.tar.gz
+DATE=$(date "+%d-%m-%Y")
+export NAME_FILE=bkp-$DATE.tar.gz

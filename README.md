@@ -1,4 +1,4 @@
-# Cloud-Backup
+# AutoSync
 Program for creation and automatized comprehenzion of backups in clouding providors of your preference
 
 # First step:

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 #------------------------------- HEADER	---------------------------------------- #
-# cloud_backup.sh - Do backups from your files on a cloud provider
+# AutoSync.sh - Do backups from your files on a cloud provider
 #
 # Site:    	https://github.com/Thales-Coutinho
 # Author:   	Thales Martim Coutinho
@@ -15,7 +15,7 @@
 #  cloud using Rclone, it also allows the automatic removal of Obsolete files..
 #
 #  Examples :
-#  	$ ./backup.sh
+#  	$ ./AutoSync.sh
 #  	With this command the backup is executed
 # ------------------------------------------------------------------------ #
 # Changelog:
@@ -37,7 +37,7 @@
 #
 # ------------------------------- VARIABLES ------------------------------------------ #
 
-source /home/thales/Dev/Cloud-Backup/config
+source /home/thales/Dev/AutoSync/config
 
 # ------------------------------- TESTS -------------------------------------------- #
 
